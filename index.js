@@ -5,7 +5,7 @@ import csv from 'csvtojson';
 import User from './models/user.js';
 
 const app = express();
-const PORT = 3000;
+const port= process.env.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -54,6 +54,6 @@ app.get('/api/data', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log(`Express server initialized on port ${PORT}`);
 });
